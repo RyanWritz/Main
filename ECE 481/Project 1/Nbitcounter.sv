@@ -11,23 +11,17 @@ module Nbitcount
 (output logic [Bits-1:0]Count, input logic Up,clk,reset);
 
 //intializes count to 0 regardless of number of bits 
-Count <= 0;		
+//Count <= 0;		
 
-always_ff @(posedge clk, negedge
-begin
-	case(Count)
-	begin
-		0: 				Count <= Count;		//Up == X, count remains at zero 
-		(2**Bits -1):	Count <= 
-		default: 		Count <= Count + 1;	//Up == 1, increase count 
-	end 
-
-	
-	/*	if(Up == 1 & Count < (2**Bits -1))
-		Count <= Count + 1;
-	else if (Up == 1 & Count < (2**Bits -1)	
-		Count <= 0;
-	else 								//Up == 0
-		Count <= Count - 1;	*/			//Decrease count
+always_ff @(posedge clk, negedge reset) 
+begin	
+	if(~reset)								
+		Count <= 0;							//If reset asserted set count to 0 
+	if(Up & Count < (2**Bits -1))			//If less than highest count and Up
+		Count <= Count + 1;					//Increase count 
+	if (Up & Count == (2**Bits -1))			//If equal to highest count and Up
+		Count <= Count;						//Do not increase count to avoid wrapping 
+	else if (~Up)							//Up == 0
+		Count <= Count - 1;					//Decrease count
 end
 endmodule
