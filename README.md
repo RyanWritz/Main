@@ -1,1 +1,1 @@
-This Git repository includes work from my previous programming and HDL work throughout my time at PSU and afterwards.
+This Git repository includes work from my previous programming and HDL work throughout my time at PSU and afterwards. Disregard most of the commits occuring around the same time as this code was previously on either local machines or my Google Drive prior.
