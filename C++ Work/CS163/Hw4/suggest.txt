@@ -1,0 +1,15 @@
+ hash function should be private.
+
+-2 Inconsistent indentation.  Put { on own line.
+
+-6 Destructor doesn't delete keywords or the hash table array.  Only deletes the first node of each LLL.
+
+-5 Insert should add one node to the hash table for each keyword.  The nodes should have pointers to the app data.  Add at the front of the LLL, don't traverse.
+
+-6 Retrieve should find apps that have the same keyword and put them in a dynamically allocated array.
+
+-1 Display should display all of the apps in the LLL that have the correct keyword.
+
+-3 DisplayAll not implemented (the function called display_all doesn't).
+
+-2 Seg fault on insert (you need to create the array of keywords before trying to add to it).
