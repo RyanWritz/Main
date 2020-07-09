@@ -1,0 +1,43 @@
+Script started on 2020-04-12 18:09:00-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="108" LINES="36"]
+]0;ryan@rww-VirtualBox: ~/Documents/ECE373/Hw1[01;32mryan@rww-VirtualBox[00m:[01;34m~/Documents/ECE373/Hw1[00m$ make TempBuild
+gcc -g -o TempConvert TempConvert.c 
+]0;ryan@rww-VirtualBox: ~/Documents/ECE373/Hw1[01;32mryan@rww-VirtualBox[00m:[01;34m~/Documents/ECE373/Hw1[00m$ make TempRun
+gdb ./TempConvert
+[35;1mGNU gdb (Ubuntu 8.3-0ubuntu1) 8.3
+[mCopyright (C) 2019 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./TempConvert[m...
+(gdb) break main 
+Breakpoint 1 at [34m0x121c[m: file [32mTempConvert.c[m, line 26.
+(gdb) run
+Starting program: /home/ryan/Documents/ECE373/Hw1/TempConvert 
+
+Breakpoint 1, [33mmain[m () at [32mTempConvert.c[m:26
+26	{
+(gdb) r[Knext 
+31		printf("How hot is it in Farenheit?\n");
+(gdb) r[Kc
+Continuing.
+How hot is it in Farenheit?
+45
+You entered that it is 45.000000 F
+The equivalent temperatures for this are 7.222222 C, 280.372223 K.
+[Inferior 1 (process 28137) exited normally]
+(gdb) quit
+]0;ryan@rww-VirtualBox: ~/Documents/ECE373/Hw1[01;32mryan@rww-VirtualBox[00m:[01;34m~/Documents/ECE373/Hw1[00m$ make TempRunBuild[2PRunBuildtail /var/log/syslog[6Pmake TempBuild[K[K[K[K[KClean
+rm TempConvert
+]0;ryan@rww-VirtualBox: ~/Documents/ECE373/Hw1[01;32mryan@rww-VirtualBox[00m:[01;34m~/Documents/ECE373/Hw1[00m$ exit
+
+Script done on 2020-04-12 18:10:35-07:00 [COMMAND_EXIT_CODE="0"]
